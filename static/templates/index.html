@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        a{
+            display: block;
+            line-height: 30px;
+            border-bottom: 10px solid #eee;
+            text-decoration:none;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="{% url "add2" 4 5 %}">计算4+5的和</a>
+
+    <br/>
+
+    <a href="/add/?a=10&b=20">计算10+20的和</a>
+
+    <br/>
+
+    <a href="/login">login</a>
+
+    <br/>
+
+    <a href="/templateStudy">跳转到templateStudy中的Home.html</a>
+
+    <br/>
+
+    <a href="/formPost">form post提交</a>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+    templateStudy
+{% endblock %}
+
+{% block content %}
+    <div id="container">
+         这是templateStudy里面的模板 （中间部分）
+        <br/>
+        <p>遍历list</p>
+        <ul>
+            {% for ele in list %}
+                {% if ele.name %}
+                    <li>书名：{{ ele.name }}</li>
+                {% else %}
+                    <li>书名为空</li>
+                {% endif %}
+            {% empty %}{% comment %}list为空时返回（抱歉，书名为空）{% endcomment %}
+                <li>抱歉，书名为空！！</li>
+            {% endfor %}
+        </ul>
+        <div>
+            {% for ele in map %}
+                {{ ele }}
+                {% if not forloop.last %},{% endif %}
+            {% endfor %}
+
+        </div>
+        模板上得到视图的网址 {% url 'add2' 4 5 %}
+        <br>
+        获取当前的地址 {{ request.path }}
+        <br>
+        获取当前的GET参数 {{ request.GET.urlencode }}
+        <br>
+        获取当前的用户 {{ request.user }}
+    </div>
+{% endblock %}

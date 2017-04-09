@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title  %}默认标题{% endblock %}</title>
+    <style>
+        div{
+            background: #eeeeee;
+            min-height: 100px;
+            color: #ff0000;
+        }
+        *{
+            margin-bottom: 5px;
+            color: #333;
+            padding: 10px;
+            list-style: none;
+        }
+    </style>
+</head>
+<body>
+    {% include "head.html" %}
+    {% block content %}
+        <div id="content">
+            默认内容
+        </div>
+    {% endblock %}
+    {% include "footer.html" %}
+</body>
+</html>

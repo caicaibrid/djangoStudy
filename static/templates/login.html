@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            width: 100%;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+        }
+        table td,table th{
+            border: 1px solid #666;
+            text-align: center;
+            color: #ff0000;
+            line-height: 30px;
+        }
+    </style>
+</head>
+<body>
+        <h2>创建用户</h2>
+        <form method="get" action="/addUser/">
+            <table>
+                <tr>
+                    <td>username:</td>
+                    <td><input type="text" name="name"/></td>
+                </tr>
+                <tr>
+                    <td>age:</td>
+                    <td><input type="number" name="age"/></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="提交"/></td>
+                    <td>{{ request.session.error}}</td>
+                </tr>
+            </table>
+        </form>
+        <h2>user 列表</h2>
+        <table>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+            </tr>
+            {% for obj in result %}
+                <tr>
+                    <td>{{ obj.name }}</td>
+                    <td>{{ obj.age }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+
+</body>
+</html>
